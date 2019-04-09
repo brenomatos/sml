@@ -6,3 +6,5 @@ fun fourth(a::b::c::d::L) = d;
 
 fun min(a,b) = if a<b then a else b;
 fun min3(a,b,c) = min(min(a,b),c)
+
+fun red3(a,b,c) = (a,c);
