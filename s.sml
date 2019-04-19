@@ -27,4 +27,7 @@ fun sqsum(0) = 0 | sqsum(n) = (n*n )+sqsum(n-1);
 
 fun cycle(l::ls,0) = l::ls | cycle(l::ls,1) = ls@[l] | cycle(l::ls,n) = cycle(ls@[l],n-1);
 
-fun pow(a:real,1) = a | pow(a,n) = a*pow(a,n-1); 
+fun pow(a:real,1) = a | pow(a,n) = a*pow(a,n-1);
+
+fun maxhelper([],x) = x | maxhelper(l, x) = if hd l > x then maxhelper(tl l,hd l) else maxhelper(tl l,x);
+fun max(l) = maxhelper(tl l, hd l);
