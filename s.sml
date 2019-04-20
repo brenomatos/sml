@@ -31,3 +31,5 @@ fun pow(a:real,1) = a | pow(a,n) = a*pow(a,n-1);
 
 fun maxhelper([],x) = x | maxhelper(l, x) = if hd l > x then maxhelper(tl l,hd l) else maxhelper(tl l,x);
 fun max(l) = maxhelper(tl l, hd l);
+
+fun divisible (x,b) = if x mod b = 0 then true else false;
