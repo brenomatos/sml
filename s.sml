@@ -33,3 +33,46 @@ fun maxhelper([],x) = x | maxhelper(l, x) = if hd l > x then maxhelper(tl l,hd l
 fun max(l) = maxhelper(tl l, hd l);
 
 fun divisible (x,b) = if x mod b = 0 then true else false;
+
+
+
+fun il3rl x = map (fn a => real(a)) x ;
+
+fun ordList(z) = map (fn a => ord(a)) z;
+
+fun squareList x = map (fn a => a*a) x;
+
+fun multPairs x = map (fn (a,b) => a*b) x;
+
+fun incList (x,n) = map (fn a => a+n) x;
+
+fun sqSum xs = foldl (fn (x,acc) => x*x + acc) (hd xs) (tl xs);
+
+fun bor x = foldl (fn (a, acc) => a orelse acc) (hd x) (tl x);
+
+fun band x = foldl (fn (a, acc) => a andalso acc) (hd x) (tl x);
+
+fun bxor x = foldl (fn (a, acc) => (a orelse acc) andalso not(a andalso acc)) (hd x) (tl x);
+
+fun dupList x = foldr (fn (a,acc) => [a,a]@acc) [] x;
+
+fun myLength x = foldl (fn (a,acc) => acc+1) 0 ( x);
+
+(* fun is2absrl x = map(real(fn a => real(abs(a)))) x; *)
+
+fun trueCount x = foldl (fn (a,acc) => if a=true then acc+1 else acc+0) 0 (x);
+
+fun maxPairs x = map (fn (a,b) => if a > b then a else b) x;
+
+fun myImplode x = foldl (fn (a,acc) => a^acc) "" (x);
+
+fun lconcat x = foldr (fn (a,acc) => a@acc) [] x;
+
+fun max x = foldl (fn (a,acc) => if a > acc then a else acc) (hd x) (tl x);
+
+fun min x = foldl (fn (a,acc) => if a > acc then acc else a) (hd x) (tl x);
+
+(* fun member (e,L) = foldl (fn (e,acc) => if e=(acc) then true else false ) (hd L) (tl L); *)
+
+
+fun less (e,L) = foldl(fn(e,acc) => if hd L > e then [e]@acc else nil@acc) ([]) ( L);
