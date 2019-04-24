@@ -32,8 +32,13 @@ fun pow(a:real,1) = a | pow(a,n) = a*pow(a,n-1);
 fun maxhelper([],x) = x | maxhelper(l, x) = if hd l > x then maxhelper(tl l,hd l) else maxhelper(tl l,x);
 fun max(l) = maxhelper(tl l, hd l);
 
-fun divisible (x,b) = if x mod b = 0 then true else false;
-
+fun isPrime (x) =
+	let 
+		fun chico(x,n) = if x=n then true 
+		else if x mod n = 0 then false else chico(x,n+1)
+	in 
+		chico(x,2)
+	end
 
 
 fun il3rl x = map (fn a => real(a)) x ;
